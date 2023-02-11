@@ -1,24 +1,33 @@
 <script setup>
+import LayoutHeader from '@/components/layout/Header.vue'
 </script>
 
 <template>
+  <div class="container">
+    <layout-header></layout-header>
+    <div class="content">
+      <router-view></router-view>
+    </div>
+  </div>
 <router-view>
 
 </router-view>
 </template>
 
-<style scoped>
+<style lang="scss">
 @import "./styles/global.scss";
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.content {
+  max-width: 1400px;
+  margin-left: 250px;
+  padding: 30px;
+  transition: 0.2s;
+&_full {
+   margin-left: 0;
+ }
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 </style>
