@@ -1,14 +1,8 @@
 <template>
-<header class="header">
-  <router-link to="/">Base Vue3</router-link>
-</header>
+  <header class="header">
+    <router-link to="/">UI Kit (Vue 3 + Composition API)</router-link>
+  </header>
 </template>
-
-<script>
-export default {
-  name: "Header"
-}
-</script>
 
 <style lang="scss" scoped>
 .header {

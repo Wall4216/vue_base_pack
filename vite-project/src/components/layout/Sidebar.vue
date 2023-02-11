@@ -13,7 +13,7 @@ const links = ref([
 </script>
 
 <template>
-  <div class="sidebar">
+  <div :class="'sidebar', {sid}">
     <router-link
         class="sidebar__link"
         v-for="link in links"

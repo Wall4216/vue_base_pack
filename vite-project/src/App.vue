@@ -1,12 +1,20 @@
 <script setup>
 import LayoutHeader from '@/components/layout/Header.vue'
 import LayoutSidebar from '@/components/layout/Sidebar.vue'
+import {ref} from "vue";
+
+const isOpenMenu = ref(false)
+
+const toggleMenu = () => {
+  isOpenMenu.value = !isOpenMenu.value
+}
 </script>
 
 <template>
   <div class="container">
-    <layout-header></layout-header>
-    <layout-sidebar></layout-sidebar>
+    <div class="sidebar-toggle" @click="toggleMenu">&#5125;</div>
+    <layout-header />
+    <layout-sidebar :openSidebar="isOpenMenu" />
     <div class="content">
       <router-view></router-view>
     </div>
