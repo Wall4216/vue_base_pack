@@ -4,12 +4,16 @@ const props = defineProps({
    type: String,
    default: 'Button'
  },
+  color: {
+   type: String,
+    default: 'primary'
+  }
  })
 </script>
 
 
 <template>
-<button class="btn">{{label}}</button>
+<button :class="['btn', `btn_${color}`]">{{label}}</button>
 </template>
 
 <script>
@@ -34,10 +38,69 @@ export default {
   &_primary {
     background: var(--primary);
     border: 1px solid var(--primary);
-
     &:enabled:hover {
       background: var(--primary-hover);
     }
   }
+  &_second {
+    background: var(--second);
+    border: 1px solid var(--second);
+    &:enabled:hover {
+      background: var(--second-hover);
+    }
+  }
+  &_success {
+    background: var(--success);
+    border: 1px solid var(--success);
+    &:enabled:hover {
+      background: var(--success-hover);
+    }
+  }
+  &_info {
+    background: var(--info);
+    border: 1px solid var(--info);
+    &:enabled:hover {
+      background: var(--info-hover);
+    }
+  }
+  &_warning {
+    background: var(--warning);
+    border: 1px solid var(--warning);
+    &:enabled:hover {
+      background: var(--warning-hover);
+    }
+  }
+  &_danger {
+    background: var(--danger);
+    border: 1px solid var(--danger);
+    &:enabled:hover {
+      background: var(--danger-hover);
+    }
+  }
+  &:disabled {
+    opacity: .6;
+    cursor: default;
+  }
+  &_rounded {
+    border-radius: 15px;
+  }
+  &_outlined {
+    background: transparent;
+    color: #000;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &_icon {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  &_large {
+    height: 48px;
+    padding: 0 30px;
+  }
+
 }
 </style>

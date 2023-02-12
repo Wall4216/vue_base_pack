@@ -2,6 +2,8 @@
 import LayoutHeader from "@/components/Layout/Header.vue";
 import LayoutSidebar from "@/components/Layout/Sidebar.vue";
 import { ref } from "vue";
+import Button from "@/components/Button.vue";
+import ButtonView from "@/views/Button.vue";
 
 const isOpenMenu = ref(false);
 
@@ -17,6 +19,8 @@ const toggleMenu = () => {
     <layout-sidebar :openSidebar="isOpenMenu" />
     <div :class="['content', { content_full: !isOpenMenu }]">
       <router-view />
+      <ButtonView type=""/>
+
     </div>
   </div>
 </template>
