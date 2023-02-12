@@ -1,27 +1,53 @@
 <script setup>
 const props = defineProps({
- label: {
-   type: String,
-   default: 'Button'
- },
+  label: {
+    type: String,
+    default: 'Button'
+  },
   color: {
-   type: String,
+    type: String,
     default: 'primary'
+  },
+  disabled: {
+    type: Boolean,
+    required: false
+  },
+  rounded: {
+    type: Boolean,
+    required: false
+  },
+  outlined: {
+    type: Boolean,
+    required: false
+  },
+  icon: {
+    type: String,
+    required: false
+  },
+  size: {
+    type: String,
+    default: 'normal'
   }
- })
-</script>
+})
 
+const emit = defineEmits(['click'])
 
-<template>
-<button :class="['btn', `btn_${color}`]">{{label}}</button>
-</template>
-
-<script>
-export default {
-  name: "Button"
+const clickOnButton = () => {
+  emit('click')
 }
 </script>
 
+<template>
+  <button
+      :class="['btn', `btn_${color}`, {'btn_rounded': rounded}, {'btn_outlined': outlined}, {'btn_icon': icon}, {'btn_large': size === 'large'}]"
+      :disabled="disabled"
+      @click="clickOnButton">
+      <span v-if="icon">
+        <font-awesome-icon :icon="`fa-regular fa-${icon}`" />
+      </span>
+    <span v-else>{{label}}</span>
+  </button>
+</template>
 
 <style lang="scss" scoped>
 .btn {
@@ -101,6 +127,5 @@ export default {
     height: 48px;
     padding: 0 30px;
   }
-
 }
 </style>
