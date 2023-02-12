@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Index from '@/views/Index.vue'
 import Button from "@/views/Button.vue";
+import Checkbox from "@/views/Checkbox.vue";
 import Typography from "@/views/Typography.vue";
 const router = createRouter({
     history: createWebHistory(),
@@ -19,6 +20,11 @@ const router = createRouter({
             path: '/typography',
             name: 'Typography',
             component: Typography
+        },
+        {
+            path: '/checkbox',
+            name: 'Checkbox',
+            component: Checkbox
         },
     ]
 })

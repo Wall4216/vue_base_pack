@@ -18,7 +18,7 @@ const toggleMenu = () => {
     <layout-header />
     <layout-sidebar :openSidebar="isOpenMenu" />
     <div :class="['content', { content_full: !isOpenMenu }]">
-      <router-view />
+      <router-view/>
       <ButtonView type=""/>
 
     </div>

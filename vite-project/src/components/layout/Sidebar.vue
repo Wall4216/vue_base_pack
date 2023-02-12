@@ -9,11 +9,12 @@ const props = defineProps({
 const links = ref([
   { name: "Typography", href: "/typography" },
   { name: "Button", href: "/button" },
+  { name: "Checkbox", href: "/checbox" },
 ]);
 </script>
 
 <template>
-  <div :class="'sidebar', {sid}">
+  <div :class="['sidebar', { sidebar_isopen: openSidebar }]">
     <router-link
         class="sidebar__link"
         v-for="link in links"
