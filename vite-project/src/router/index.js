@@ -38,6 +38,12 @@ const router = createRouter({
             name: 'Progress',
             component: Progress
         },
+
+        {
+            path: '/input',
+            name: 'Input',
+            component: Input
+        },
     ]
 })
 
