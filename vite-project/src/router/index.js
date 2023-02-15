@@ -4,6 +4,7 @@ import Button from "@/views/Button.vue";
 import Checkbox from "@/views/Checkbox.vue";
 import RadioButton from "@/views/RadioButton.vue";
 import Progress from "@/views/Progress.vue";
+import Input from "@/views/Input.vue";
 import Typography from "@/views/Typography.vue";
 const router = createRouter({
     history: createWebHistory(),
