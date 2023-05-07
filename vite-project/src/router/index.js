@@ -52,11 +52,7 @@ const router = createRouter({
             name: 'Tabs',
             component: Tabs
         },
-        {
-            path: '/table',
-            name: 'Table',
-            component: Table
-        },
+        
     ]
 })
 
