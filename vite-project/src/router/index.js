@@ -52,7 +52,15 @@ const router = createRouter({
             name: 'Tabs',
             component: Tabs
         },
-        
+        {
+
+            path: '/hash',
+
+            name: 'Hasg',
+
+            component: Hash
+
+        },
     ]
 })
 
